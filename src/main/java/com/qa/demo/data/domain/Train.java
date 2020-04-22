@@ -1,8 +1,10 @@
 package com.qa.demo.data.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Train {
@@ -13,7 +15,11 @@ public class Train {
 
 	private String name;
 	
+//	@Column(nullable = false, name = "colour")
 	private String colour;
+	
+	@ManyToOne
+	private TrainYard trainYard;
 
 	public Train() {
 		super();
@@ -53,5 +59,15 @@ public class Train {
 	public String toString() {
 		return "Train [name=" + name + ", colour=" + colour + "]";
 	}
+
+	public TrainYard getTrainYard() {
+		return trainYard;
+	}
+
+	public void setTrainYard(TrainYard trainYard) {
+		this.trainYard = trainYard;
+	}
+	
+	
 
 }
