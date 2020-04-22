@@ -38,7 +38,8 @@ public class TrainService {
 		return this.repo
 				.findAll()
 				.stream()
-				.map(this::mapToDTO)
+				.map((train) -> this.mapToDTO(train))
+				//.map(this::mapToDTO)
 				.collect(Collectors.toList());
 	}
 

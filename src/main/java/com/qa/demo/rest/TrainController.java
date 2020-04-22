@@ -34,7 +34,7 @@ public class TrainController {
 	}
 
 	@GetMapping("/read")
-	public List<Train> read() {
+	public List<TrainDTO> read() {
 		return this.service.read();
 	}
 	
