@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.demo.data.domain.Train;
+import com.qa.demo.dto.TrainDTO;
 import com.qa.demo.services.TrainService;
 
 @RestController
@@ -28,7 +29,7 @@ public class TrainController {
 	}
 
 	@PostMapping("/create")
-	public Train create(@RequestBody Train train) {
+	public TrainDTO create(@RequestBody Train train) {
 		return this.service.create(train);
 	}
 

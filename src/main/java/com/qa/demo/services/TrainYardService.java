@@ -38,4 +38,9 @@ public class TrainYardService {
 		return this.repo.existsById(id);
 	}
 
+	public void addTrain(Long trainID, Long yardID) {
+//		Train 
+		
+	}
+
 }
