@@ -15,8 +15,8 @@ public class SpringExampleApplication {
 	// IoC -> inversion of control -> program manages objects for the dev
 	public static void main(String[] args) {
 		ApplicationContext ac = SpringApplication.run(SpringExampleApplication.class, args);
-		TrainService service = ac.getBean(TrainService.class);
-		service.create(new Train("Thomas", "Blue"));
+//		TrainService service = ac.getBean(TrainService.class);
+//		service.create(new Train("Thomas", "Blue"));
 	}
 
 }

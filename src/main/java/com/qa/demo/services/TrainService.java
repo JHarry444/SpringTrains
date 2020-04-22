@@ -30,7 +30,7 @@ public class TrainService {
 	public Train update(String name, String colour, Long id) {
 		Train train = this.repo
 				.findById(id)
-				.orElseThrow(TrainNotFoundException::new);
+				.orElseThrow(() -> new TrainNotFoundException());
 		train.setColour(colour);
 		train.setName(name);
 		return this.repo.save(train);
