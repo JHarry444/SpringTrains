@@ -53,7 +53,7 @@ public class TrainServiceUnitTest {
 		assertEquals(dto, service.create(train));
 
 		verify(repo, times(1)).save(train);
-		verify(mapper, times(2)).map(trainWithID, TrainDTO.class);
+		verify(mapper, times(1)).map(trainWithID, TrainDTO.class);
 	}
 
 }
