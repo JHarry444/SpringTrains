@@ -34,12 +34,9 @@ public class TrainService {
 	}
 
 	public List<TrainDTO> read() {
-		//convert List<Train> -> List<TrainDTO>
-		return this.repo
-				.findAll()
-				.stream()
-				.map((train) -> this.mapToDTO(train))
-				//.map(this::mapToDTO)
+		// convert List<Train> -> List<TrainDTO>
+		return this.repo.findAll().stream().map((train) -> this.mapToDTO(train))
+				// .map(this::mapToDTO)
 				.collect(Collectors.toList());
 	}
 
