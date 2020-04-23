@@ -2,13 +2,14 @@ package com.qa.demo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.modelmapper.ModelMapper;
 
@@ -48,11 +49,11 @@ public class TrainControllerUnitTest {
 
 	@Test
 	public void testCreate() {
-		Mockito.when(this.service.create(train)).thenReturn(trainDTO);
+		when(this.service.create(train)).thenReturn(trainDTO);
 
 		assertEquals(this.controller.create(train), trainDTO);
 
-		Mockito.verify(this.service, times(1)).create(train);
+		verify(this.service, times(1)).create(train);
 
 	}
 
